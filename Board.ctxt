@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.target=Board
+comment1.params=
+comment1.target=Board()
+comment2.params=character\ x\ y
+comment2.target=void\ setSpace(char,\ int,\ int)
+comment3.params=x\ y
+comment3.target=char\ getSpace(int,\ int)
+comment4.params=depth
+comment4.target=char[]\ getRow(int)
+comment5.params=width
+comment5.target=char[]\ getColumn(int)
+comment6.params=leftRight
+comment6.target=char[]\ getDiagonal(char)
+comment7.params=
+comment7.target=void\ printBoard()
+numComments=8
