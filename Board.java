@@ -7,13 +7,13 @@ public class Board {
 
     public Board() {}
 
-    public void setSpace(char character, int x, int y) {
+    public void setSpace(char character, int y, int x) {
 
         board[x][y] = character;
 
     }
 
-    public char getSpace(int x, int y) {
+    public char getSpace(int y, int x) {
 
         return board[x][y];
 
