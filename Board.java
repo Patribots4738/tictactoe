@@ -4,6 +4,7 @@ public class Board {
 	String[][] board;
 	boolean turn;
 
+	// the constructor for the board; initializes player 1 as X and player 2 as O and instantiates the board
 	public Board() {
 		this.board = new String[3][3];
 		// initalizes the board with 9 spaces
@@ -15,6 +16,7 @@ public class Board {
 		this.turn = false;  
 	}
 
+	// makes a move with the proper player at the specified coordinate where x is the row and y is the column
 	public void makeMove(int x, int y) {
 		// checks to make sure the move is in range
 		if (x <= 2 || x >= 0 || y <= 2 || y >= 0) {
@@ -33,9 +35,12 @@ public class Board {
 		this.turn = !this.turn;
 	}
 
+	// returns the value of the space at the coordinate (x,y) where x is the row and y is the column
 	public String getSpace(int x, int y) {
 		return board[x][y];
 	}
+
+	// returns true if every space on the board is filled with either an X or an O
 	public boolean isGameOver() {
 		for (int i = 0; i < this.board.length; i++) {
 			for (int j = 0; j < this.board[i].length; j++) {
@@ -46,6 +51,8 @@ public class Board {
 		}
 		return true;
 	}
+
+	// converts the turn boolean to a string representation being true for O and false for X
 	public String whoseTurn() {
 		return this.turn ? "O" : "X";
 	}
@@ -77,6 +84,8 @@ public class Board {
 	private boolean checkEquals(String s1, String s2, String s3) {
 		return s1 == s2 && s2 == s3 && s1 != " ";
 	}
+
+	// returns a string representation of the board
 	public String toString() {
 		String board = "";
 		for (int i = 0; i < this.board.length; i++) {
