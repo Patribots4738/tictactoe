@@ -19,7 +19,7 @@ public class Board {
 		// checks to make sure the move is in range
 		if (x <= 2 || x >= 0 || y <= 2 || y >= 0) {
 			// checks to make sure the space isn't already occupied
-			if (board[x][y] != " ") {
+			if (!board[x][y].equals(" ")) {
 				System.out.println("Invalid move; try again!");
 				return;
 			}
@@ -36,7 +36,16 @@ public class Board {
 	public String getSpace(int x, int y) {
 		return board[x][y];
 	}
-
+	public boolean isGameOver() {
+		for (int i = 0; i < this.board.length; i++) {
+			for (int j = 0; j < this.board[i].length; j++) {
+				if (this.board[i][j].equals(" ")) {
+					return false;
+				}
+			}
+		}
+		return true;
+	}
 	public String whoseTurn() {
 		return this.turn ? "O" : "X";
 	}

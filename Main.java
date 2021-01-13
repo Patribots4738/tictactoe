@@ -8,7 +8,7 @@ public class Main {
         Scanner input = new Scanner(System.in);
 
         // while there is no winner, loop forever
-        while (board.getWinner() == null) {
+        while (board.getWinner() == null && !board.isGameOver()) {
             System.out.println("\n" + board.toString() + "\n");
             System.out.println("Please make your move " + board.whoseTurn() + " (row, col)\n");
             int[] move = stringToInt(input.nextLine());
@@ -18,8 +18,8 @@ public class Main {
             }
             board.makeMove(move[0], move[1]);
         }
-        System.out.println(board.toString());
-        System.out.println(board.getWinner() + " wins!");
+        System.out.println("\n" + board.toString() + "\n");
+        System.out.println((board.getWinner() != null ? board.getWinner() : "Nobody") + " wins!");
         
         input.close();
     }
