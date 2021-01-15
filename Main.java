@@ -20,7 +20,7 @@ public class Main {
 
             String input = scan.nextLine();
 
-            while(Checker.isValidInput(input)) {
+            while(!Checker.isValidInput(input)) {
 
                 System.out.println("Invalid space, choose again");
 
@@ -37,6 +37,15 @@ public class Main {
                 System.out.println("Invalid space, choose again");
 
                 input = scan.nextLine();
+
+                while(!Checker.isValidInput(input)) {
+
+                    System.out.println("Invalid space, choose again");
+    
+                    input = scan.nextLine();
+    
+                }
+
 
                 coordinateStrings = input.split(",");
 
